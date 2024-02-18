@@ -1,3 +1,3 @@
-# VS_tic-tac-toe
-# 井字棋简易版
-# vs编译
+## VS_tic-tac-toe
+vs编译  
+井字棋简易版  
