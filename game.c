@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "game.h"
 
-//³õÊ¼»¯
+//åˆå§‹åŒ–
 void initial(char board[ROW][COL])
 {
 	int i = 0;
@@ -16,7 +16,7 @@ void initial(char board[ROW][COL])
 	}
 }
 
-//´òÓ¡ÆåÅÌ
+//æ‰“å°æ£‹ç›˜
 void output(char board[ROW][COL])
 {
 	int i = 0;
@@ -59,7 +59,7 @@ void output(char board[ROW][COL])
 	}
 }
 
-//Íæ¼ÒÏÂÆå
+//ç©å®¶ä¸‹æ£‹
 void player_action(char board[ROW][COL])
 {
 	int a = 0;
@@ -67,7 +67,7 @@ void player_action(char board[ROW][COL])
 
 	while (1)
 	{
-		printf("Íæ¼ÒÏÂÆå£¬ÇëÊäÈë×ø±ê£¨Èç1 1£¬2 3£©£º");
+		printf("ç©å®¶ä¸‹æ£‹ï¼Œè¯·è¾“å…¥åæ ‡ï¼ˆå¦‚1 1ï¼Œ2 3ï¼‰ï¼š");
 		scanf("%d %d", &a, &b);
 
 		if (a <= ROW && a > 0 && b <= COL && b > 0)
@@ -79,23 +79,23 @@ void player_action(char board[ROW][COL])
 			}
 			else
 			{
-				printf("×ø±êÕ¼ÓÃ£¬ÖØĞÂÊäÈë¡£\n");
+				printf("åæ ‡å ç”¨ï¼Œé‡æ–°è¾“å…¥ã€‚\n");
 			}
 		}
 		else
 		{
-			printf("×ø±ê·Ç·¨£¬ÖØĞÂÊäÈë¡£\n");
+			printf("åæ ‡éæ³•ï¼Œé‡æ–°è¾“å…¥ã€‚\n");
 		}
 	}
 }
 
-//µçÄÔÏÂÆå
+//ç”µè„‘ä¸‹æ£‹
 void computer_action(char board[ROW][COL])
 {
 	int a = 0;
 	int b = 0;
 
-	printf("µçÄÔÏÂÆå£º\n");
+	printf("ç”µè„‘ä¸‹æ£‹ï¼š\n");
 	while (1)
 	{
 		a = rand() % ROW;
@@ -108,13 +108,13 @@ void computer_action(char board[ROW][COL])
 	}
 }
 
-//ÅĞ¶ÏÊ¤¸º
+//åˆ¤æ–­èƒœè´Ÿ
 int judge(char board[ROW][COL])
 {
 	int a = 0;
 	int b = 0;
 
-	for (a = 0; a < ROW; a++)//ÅĞ¶ÏĞĞ
+	for (a = 0; a < ROW; a++)//åˆ¤æ–­è¡Œ
 	{
 		if (board[a][b] != ' ')
 		{
@@ -125,7 +125,7 @@ int judge(char board[ROW][COL])
 		}
 	}
 
-	for (a = 0; a < COL; a++)//ÅĞ¶ÏÁĞ
+	for (a = 0; a < COL; a++)//åˆ¤æ–­åˆ—
 	{
 		if (board[b][a] != ' ')
 		{
@@ -136,17 +136,15 @@ int judge(char board[ROW][COL])
 		}
 	}
 
-	//ÅĞ¶Ï¶Ô½Ç
-	a = 0;
-	b = 0;
-	if (board[a][b] != ' ')
+	//åˆ¤æ–­å¯¹è§’
+	if (a = 0, b = 0, board[a][b] != ' ')
 	{
 		if (board[a][b] == board[a + 1][b + 1] && board[a][b] == board[a + 2][b + 2])
 		{
 			return 1;
 		}
 	}
-	if (board[a][b + 2] != ' ')
+	if (a = 0, b = 0, board[a][b + 2] != ' ')
 	{
 		if (board[a][b + 2] == board[a + 1][b + 1] && board[a][b + 2] == board[a + 2][b])
 		{
@@ -154,7 +152,7 @@ int judge(char board[ROW][COL])
 		}
 	}
 
-	//ÅĞ¶ÏÆ½¾Ö
+	//åˆ¤æ–­å¹³å±€
 	for (a = 0; a < ROW; a++)
 	{
 		for (b = 0; b < COL; b++)
